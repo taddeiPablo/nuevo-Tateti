@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <string name="app_name">TATETI</string>
+    <string name="seleccionFichas">file:///android_asset/www/PartidaIndividual/Seleccion_fichas.html</string>
+	<string name="tableroindividual">file:///android_asset/www/PartidaIndividual/tablero_individual.html</string>
+	<string name="tableromultijugador">file:///android_asset/www/Bluetooth/Tablero_multijugador.html</string>
+	<string name="ficha1">cruz</string>
+	<string name="ficha2">circulo</string>
+	<string name="TituloGanador">Tenemos un Ganador</string>
+	<string name="ganador">------</string>
+	<color android:layout_width="wrap_content" android:id="@+id/color1" android:layout_height="wrap_content" name="titulo">#0051FF</color>
+	<color android:layout_height="wrap_content" android:id="@+id/color1" android:layout_width="wrap_content" name="fondo">#FFFFFF</color>
+	<string name="todo">TODO</string>
+	<string android:id="@+id/string1" android:layout_width="wrap_content" android:layout_height="wrap_content" name="Comienzo_de_Partida">A Comenzado la Partida !!!</string>
+	<color android:layout_height="wrap_content" android:id="@+id/color1" android:layout_width="wrap_content" name="comienzo_Partida">#DA0101</color>
+	<string android:id="@+id/string1" android:layout_width="wrap_content" android:layout_height="wrap_content" name="seleccionOponente">file:///android_asset/www/Bluetooth/Seleccion_rival.html</string>
+	<string android:layout_width="wrap_content" android:id="@+id/string1" android:layout_height="wrap_content" name="ejemplo">file:///android_asset/www/Bluetooth/tab.html</string>
+	<string android:id="@+id/string1" android:layout_height="wrap_content" android:layout_width="wrap_content" name="label_boton">Conectar</string>
+	<string android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/string1" name="label_listado">Listado de Oponentes</string>
+	<string android:layout_height="wrap_content" android:id="@+id/string1" android:layout_width="wrap_content" name="activar_deteccion">Esperar invitacion</string>
+	<color android:id="@+id/color1" android:layout_height="wrap_content" android:layout_width="wrap_content" name="letras">#FF0505</color>
+	<string name="nofunciona">no funciona</string>
+	<color name="color_item">#3C519A</color>
+</resources>

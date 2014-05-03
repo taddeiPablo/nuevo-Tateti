@@ -1,0 +1,19 @@
+/*ESTILOS  PARA LA VENTANA DEL GANADOR DEL JUEGO*/
+
+.carga_imagen{
+	 background: url(../img/ganadores.png);
+	 width: 265px;
+	 height: 240px;
+	 margin-left: 15px;
+}
+
+h1{
+	color: orange;
+	margin-left: 20px;
+}
+
+section{
+	width: 300px;
+	height: 330px;
+	border: 1px solid;
+}

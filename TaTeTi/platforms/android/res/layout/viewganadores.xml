@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical"
+    android:padding="@dimen/pad_ganador" >
+
+    <TextView
+        android:id="@+id/textV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/left_titulo"
+        android:layout_marginTop="@dimen/top_titulo"
+        android:text="@string/TituloGanador"
+        android:textColor="@color/titulo"
+        android:textSize="@dimen/letra"
+        android:typeface="sans" />
+
+    <TextView
+        android:id="@+id/textGanador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/left_ganador"
+        android:layout_marginTop="@dimen/top_ganador"
+        android:text="@string/ganador"
+        android:textColor="@color/titulo"
+        android:textSize="@dimen/letra"
+        android:typeface="serif" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/left_imagen"
+        android:layout_marginTop="@dimen/top_imagen"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/ganador"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>

@@ -1,0 +1,104 @@
+/*ARCHIVO QUE CONTIENE LOS ESTILOS PARA LA VENTANA DE LA SELECCION DE FICHAS*/
+/*===============ESTILOS DE LA VENTANA DE SELECCION DE FICHAS===============*/
+
+/**/
+@font-family{
+    font-family: Comic Sans MS;
+}
+
+/*estilo para el titulo de la ventana*/
+header > div[id="bannerseleccion"] > h1{
+	font-family: Comic Sans MS;
+    font-size: 250%;
+    color: #0648C4;
+}
+
+/*estilo para el banner*/
+header > div[id="bannerseleccion"]{
+	margin-top: 30px;
+}
+
+
+/*estilo para el contenedor que contiene las fichas del juego*/
+section[id="containerSeleccion"] > div > div[id="content_seleccion"]{
+    width: 300px;
+    height: 500px;
+    box-shadow: 10px 10px 10px 10px #888;
+    position: absolute;
+    left: 95px;
+    top: 150px;
+}
+
+
+/*estilos para la ficha cruz*/
+.iconCruz{
+    width: 140px;
+    height: 140px;
+    position: absolute;
+    left: 80px;
+    top: 60px;
+    border-radius: 3px;
+}
+
+/*estilo para la ficha circulo*/
+.iconCirculo{
+    width: 140px;
+    height: 140px;
+    position: absolute;
+    left: 80px;
+    top: 285px;
+    border-radius: 3px;
+}
+
+
+/*estilo para la ficha de retroceso*/
+.flecha{
+    position: absolute;
+    top: 740px;
+    left: 174px;
+}
+
+
+/*estilo por el cual se carga la imagen de la ficha cruz*/
+.cruz{
+    background-image:url('../img/cruz.png');
+    background-repeat:no-repeat;
+    border-radius: 10px;
+    width: 141px;
+    height: 140px;
+}
+
+
+/*estilo por el cual se carga la imagen de la ficha circulo*/
+.circulo{
+    background-image:url('../img/circulo.png');
+    background-repeat:no-repeat;
+    border-radius: 10px;
+    width: 141px;
+    height: 140px;
+}
+
+/*estilo de la ficha de retroceso se setea aqui la imagen*/
+.flecha_selec{
+    background-image:url('../img/atras.png');
+    background-repeat:no-repeat;
+    border-radius: 10px;
+    width: 141px;
+    height: 62px;
+}
+
+
+/*.cruz:hover{
+    background-image:url('../img/cruz_naranja.png');
+}
+
+.circulo:hover{
+   background-image:url('../img/circulo_naranja.png');  
+}
+
+.flecha_selec:hover{
+    background-image:url('../img/atras_naranja.png');
+}*/
+
+
+

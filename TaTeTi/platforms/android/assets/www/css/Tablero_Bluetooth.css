@@ -1,0 +1,106 @@
+/**
+ * 	ESTILOS PARA EL TABLERO MULTIJUGADOR
+ */
+
+/*estilo para el display del jugador*/
+.jugador{
+    position: absolute;
+    width: 61px;
+    height: 68px;
+    top: 25px;
+    left: 50px;
+}
+
+/*estilo para el display de la maquina*/
+.oponente{
+    position: absolute;
+    width: 61px;
+    height: 68px;
+    top: 25px;
+    left: 378px;
+}
+
+/*estilo para el display del turno*/
+.turno{
+    position: absolute;
+    width: 115px;
+    height: 20px;
+    left: 188px;
+    top: 115px;
+}
+
+/*estilo para el tablero del juego*/
+table
+{
+    border-collapse:collapse;
+    margin-top: 10px;
+}
+
+/*estilo para el tablero del juego*/
+table, td, th
+{
+    border:1px solid #0648C4;
+}
+
+/*estilo para la ficha de retroceso*/
+.ficha{
+    padding: 50px;
+}
+
+/*estilo para el tablero en donde se configura el margen top*/
+body > section {
+    position: absolute;
+    top: 160px;
+}
+
+
+/*estilo hover para el td*/
+td:hover{
+    cursor: pointer;
+}
+
+
+td > input{
+	padding: 2px;
+}
+
+
+/*estilo para el display del juegador,  aqui se cambia la fuente*/
+div[class="jugador"] > div{
+    font-family: Comic Sans MS;
+    font-size: 130%;
+}
+
+/*estilo para el display de la maquina, aqui se cambia la fuente*/
+div[class="oponente"] > div{
+    font-family: Comic Sans MS;
+    font-size: 130%;   
+}
+
+/*estilo para el display del turno, aqui se cambia la fuente*/
+div[class="turno"] > div{
+    font-family: Comic Sans MS;
+    font-size: 130%;   
+}
+
+/*estilo para ficha de retroceso*/
+.flecha{
+    position: absolute;
+    top: 740px;
+    left: 165px;
+}
+
+/*estilo para la ficha de retroceso aqui se coloca la imagen*/
+.flecha_selec{
+    background-image:url('../img/atras.png');
+    background-repeat:no-repeat;
+    border-radius: 10px;
+    width: 141px;
+    height: 62px;
+}
+
+/*estilo para cambiar la imagen de retroceso cada vez que se selecciona*/
+.flecha_selec:hover{
+    background-image:url('../img/atras_naranja.png');
+}
+

@@ -1,0 +1,24 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+	<dimen name="left_imagen">140dp</dimen>
+	<dimen name="top_imagen">40dp</dimen>
+	<dimen android:layout_height="wrap_content" android:id="@+id/dimen1" android:layout_width="wrap_content" name="letra">25dp</dimen>
+	<dimen android:layout_width="wrap_content" android:id="@+id/dimen1" android:layout_height="wrap_content" name="left_titulo">5dp</dimen>
+	<dimen android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/dimen1" name="left_ganador">10dp</dimen>
+	<dimen android:layout_height="wrap_content" android:id="@+id/dimen1" android:layout_width="wrap_content" name="top_titulo">40dp</dimen>
+	<dimen android:layout_width="wrap_content" android:id="@+id/dimen1" android:layout_height="wrap_content" name="top_ganador">20dp</dimen>
+	<dimen android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/dimen1" name="pad_ganador">20dp</dimen>
+	<dimen android:layout_height="wrap_content" android:id="@+id/dimen1" android:layout_width="wrap_content" name="left_Label_dispositivo">20dp</dimen>
+	<dimen android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/dimen1" name="left_Barra_progreso">20dp</dimen>
+	<dimen android:layout_width="wrap_content" android:id="@+id/dimen1" android:layout_height="wrap_content" name="left_boton_conexion">30dp</dimen>
+	<dimen android:layout_height="wrap_content" android:id="@+id/dimen1" android:layout_width="wrap_content" name="left_Listado">10dp</dimen>
+	<dimen android:id="@+id/dimen1" android:layout_height="wrap_content" android:layout_width="wrap_content" name="top_listado_oponentes">15dp</dimen>
+	<dimen android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/dimen1" name="top_titulo_listado">10dp</dimen>
+	<dimen name="left_reiniciar_deteccion">20dp</dimen>
+	<dimen android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/dimen1" name="left_reiniciar">35dp</dimen>
+	<dimen name="padding">60dp</dimen>
+	<dimen name="padding_left">20dp</dimen>
+</resources>
