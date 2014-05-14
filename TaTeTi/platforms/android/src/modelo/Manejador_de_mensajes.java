@@ -49,8 +49,9 @@ public class Manejador_de_mensajes extends Handler {
 		case MESSAGE_READ :
 			byte[] readBuf = (byte[]) msg.obj;
 			String mensaje = getString(readBuf);
+			this.tablero_bluetooth_controller.set_movimientoOponente(mensaje);
 			this.tablero_bluetooth_controller.set_index_rival(mensaje);
-			this.tablero_bluetooth_controller.set_turno("tu turno");
+			this.tablero_bluetooth_controller.set_bandera(3);
 			break;
 		case MESSAGE_WRITE :
 			Log.e("aqui entro", "aca entro" + "MESSAGE_WRITE");

@@ -80,13 +80,13 @@ public class Tablero_bluetoothActivity extends CordovaActivity {
 				this.controller.set_nombre_Dispositivo(name);
 				this.controller.set_mi_ficha("cruz");
 				this.controller.set_ficha_oponente("circulo");
-				this.controller.set_turno("tu turno");
+				this.controller.set_bandera(1);
 				BluetoothDevice device = this.controller.getdataAdapter().getRemoteDevice(address);
 				this.controller.controller_connect(device);
 			}else{
 				this.controller.set_mi_ficha("circulo");
 				this.controller.set_ficha_oponente("cruz");
-				this.controller.set_turno("turno del oponente");
+				this.controller.set_bandera(2);
 			}
 			break;
 		case 2:

@@ -24,7 +24,7 @@ $(function(){
 		fichaSeleccionada = window.Tablero_BluetoothController.get_mi_ficha();
 		cargar_ficha_tablero(fichaSeleccionada,id);
 		window.Tablero_BluetoothController.mandar_mensaje(id);
-		actualizarTablero();
+		ganadores();
 	});
 	
 	$('#flecha_selec').click(function(){
@@ -108,19 +108,40 @@ function actualizarTablero(){
 	if(posicion_oponente != null){
 		cargar_ficha_tablero(ficha_oponente, posicion_oponente);
 		turno_inicio();
-		desactivar_actualizacion_tablero();
 	}
+	
+	
+	
 }
 
 /**
  * 
  */
 function desactivar_actualizacion_tablero(){
-	clearTimeout(mytablero);
+	clearTimeout(tablero);
 }
 
 
 function turno_inicio(){
-	var turno = window.Tablero_BluetoothController.get_turno();
-	$('#turno').text(turno);
+	var bandera = window.Tablero_BluetoothController.get_bandera();
+	if(bandera == 1){
+		$('#turno').text("tu turno");
+	}else if(bandera == 2){
+		$('#turno').text("turno del oponente");
+	}else if(bandera == 3){
+		$('#turno').text("tu turno");
+	}
 }
+
+
+function ganadores(){
+	var evaluar = window.Tablero_BluetoothController.get_ganador();
+	if(evaluar == 1){
+		alert('hay ganador');
+	}else if(evaluar == 2){
+		
+	}else{
+		
+	}
+}
+

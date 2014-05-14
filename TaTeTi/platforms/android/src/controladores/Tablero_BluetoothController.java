@@ -1,6 +1,7 @@
 package controladores;
 
 import modelo.Manejador_de_mensajes;
+import modelo.Modelo_bluetooth;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
@@ -29,17 +30,22 @@ public class Tablero_BluetoothController {
 	private String mi_ficha = null;
 	private String index_rival = null;
 	private String ficha_oponente = null;
-	private String turno = null;
+	private int bandera = 0;
+	private Modelo_bluetooth modeloBluetooth = null;
+	private int result = 0;
 	
 	@JavascriptInterface
-	public String get_turno(){
-		return this.turno;
+	public int get_bandera(){
+		return this.bandera;
 	}
 	
-	public void set_turno(String turno){
-		this.turno = turno;
+	public void set_bandera(int bandera){
+		this.bandera = bandera;
 	}
-	
+
+	public void set_movimientoOponente(String movimiento){
+		this.modeloBluetooth.colocar_ficha(movimiento);
+	}
 	
 	@JavascriptInterface
 	public String get_ficha_oponente(){
@@ -56,7 +62,7 @@ public class Tablero_BluetoothController {
 	}
 	
 	public void set_index_rival(String index){
-		this.set_turno("turno oponente");
+		this.set_bandera(2);
 		String[] str_valor = index.split(",");
 		int f = Integer.parseInt(str_valor[0]);
 		int c = Integer.parseInt(str_valor[1]);
@@ -114,6 +120,7 @@ public class Tablero_BluetoothController {
 		this.act = activity;
 		TableroAuxiliar_bluetooth.iniciar_Tablero();
 		this.bAdapter = BluetoothAdapter.getDefaultAdapter();
+		this.modeloBluetooth = new Modelo_bluetooth();
 	}
 	
 	
@@ -189,8 +196,10 @@ public class Tablero_BluetoothController {
 	@JavascriptInterface
 	public void mandar_mensaje(String id){
 		try{
+			this.set_bandera(2);
 			int index = Integer.parseInt(id);
 			String indexStr = TableroAuxiliar_bluetooth.getPosicionMatriz(index);
+			this.modeloBluetooth.colocarFicha(indexStr);
 			byte[] mensajeArray = indexStr.getBytes();
 			this.bsMultiJugador.write(mensajeArray);
 		}catch(Exception ex){
@@ -198,7 +207,19 @@ public class Tablero_BluetoothController {
 		}
 	}
 	
-	
+	/**
+	 * 
+	 * @return
+	 */
+	@JavascriptInterface
+	public int get_ganador(){
+		if(this.modeloBluetooth.ganadorPartida_Diagonal_contraDiagonal() != -1){
+			result = this.modeloBluetooth.get_valor();
+		}else{
+			result = this.modeloBluetooth.get_valor();
+		}
+		return result;
+	}
 	
 	
 	
