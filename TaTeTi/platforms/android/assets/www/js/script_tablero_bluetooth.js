@@ -13,7 +13,7 @@ $(function(){
 	
 	var fichaSeleccionada;
 	var fichaOponente;
-	
+
 	activar_actualizacion();
 	
 	actualizarTablero();
@@ -133,15 +133,17 @@ function turno_inicio(){
 	}
 }
 
-
+/**
+ *
+ **/
 function ganadores(){
 	var evaluar = window.Tablero_BluetoothController.get_ganador();
 	if(evaluar == 1){
-		alert('hay ganador');
+		alert('usted gano');
 	}else if(evaluar == 2){
-		
+		alert('a ganado el rival');
 	}else{
-		
+
 	}
 }
 

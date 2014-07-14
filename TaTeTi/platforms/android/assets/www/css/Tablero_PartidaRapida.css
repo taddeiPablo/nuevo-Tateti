@@ -1,6 +1,14 @@
 /*ARCHIVO QUE CONTIENE LOS ESTILOS PARA LA VENTANA DEL TABLERO DE JUEGO*/
 /*========================ESTILOS DEL TABLERO DEL JUEGO================*/
 
+
+/*Aqui seteo el tipo de Tipografia */
+@font-face {
+    font-family: myFirstFont;
+    src: url(../font/ComicRelief.ttf);
+}
+
+
 /*estilo para el display del jugador*/
 .jugador{
     position: absolute;
@@ -59,19 +67,19 @@ td:hover{
 
 /*estilo para el display del juegador,  aqui se cambia la fuente*/
 div[class="jugador"] > div{
-    font-family: Comic Sans MS;
+    font-family: myFirstFont;
     font-size: 130%;
 }
 
 /*estilo para el display de la maquina, aqui se cambia la fuente*/
 div[class="oponente"] > div{
-    font-family: Comic Sans MS;
+    font-family: myFirstFont;
     font-size: 130%;   
 }
 
 /*estilo para el display del turno, aqui se cambia la fuente*/
 div[class="turno"] > div{
-    font-family: Comic Sans MS;
+    font-family: myFirstFont;
     font-size: 130%;   
 }
 

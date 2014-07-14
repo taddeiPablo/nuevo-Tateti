@@ -215,6 +215,8 @@ public class Tablero_BluetoothController {
 	public int get_ganador(){
 		if(this.modeloBluetooth.ganadorPartida_Diagonal_contraDiagonal() != -1){
 			result = this.modeloBluetooth.get_valor();
+		}else if(this.modeloBluetooth.ganadorVertical_Horizontal() != -1){
+			result = this.modeloBluetooth.get_valor();
 		}else{
 			result = this.modeloBluetooth.get_valor();
 		}

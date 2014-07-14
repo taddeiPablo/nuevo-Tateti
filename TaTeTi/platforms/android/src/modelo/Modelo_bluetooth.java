@@ -16,6 +16,11 @@ public class Modelo_bluetooth {
 	private int aux = 0;
 	private int index = 0;
 	private int anterior = 0;
+	private int ganadorDiagonal = 0;
+	private int coincidencias = 0;
+	private int coincidenciasV = 0;
+	private int ganador = 0;
+	private int evaluar = 0;
 	
 	public int get_valor(){
 		return this.valor;
@@ -41,7 +46,10 @@ public class Modelo_bluetooth {
         if (tablero[fila][columna]==-1){
             if (this.ganadores == -1){
                 tablero[fila][columna]=1;
-             
+                if(this.evaluar == 6){
+                  int valor1 = ganadorPartida_Diagonal_contraDiagonal();
+                }
+                this.evaluar++;
             }
             return true;
         }else{
@@ -57,80 +65,117 @@ public class Modelo_bluetooth {
         if (tablero[fila][columna]==-1){
             if (this.ganadores == -1){
                 tablero[fila][columna]=2;
-             
-                //ponerFichaOrdenador();
+                
             }
         }
 	}
 	
 
-	
+	/**
+	 * VERIFICO SI HAY GANADORES EN LA DIAGONAL Y LA CONTRA-DIAGONAL
+	 * @return
+	 */
 	public int ganadorPartida_Diagonal_contraDiagonal(){
-		/*for(int i=this.aux_index; i < 8; i++){
-			int columna = i+1;
-			if(tablero[i][i] != -1 && tablero[columna][columna] != -1 && tablero[i][i] == tablero[columna][columna]){
-				this.aux_index = columna;
-				this.contador_ganador_Diagonal++;
-				this.valor = tablero[columna][columna];
-			}
-		}*/
-		this.index = this.anterior;
-		for(int i=this.aux_index_contra; i > 0; i--){
-			int info = tablero[index][i];
-			int ind = info;
-			if(tablero[index][i] != -1){
-				int var = index == 7 ? 7 : index+1;
-				int vard = i == 0 ? 0 : i-1;
-				if(tablero[index][i] == tablero[var][vard]){
-					this.contador_ganador_contra_diagonal++;
-					if(var == 7){
-						this.aux_index_contra = 7;
-						this.anterior = 0;
-					}/*else{
-						this.anterior = var;
-						this.aux_index_contra = vard;
-					}*/
-				}
-			}
-			index++;
-		}
+		try{
+			int cont = 1;
+			int contAux = 0;
+			int coincidenciasDiagonal = 1;
+			int coincidenciasContraDiagonal = 1;
 			
-		
-		if(this.contador_ganador_Diagonal == 5 || this.contador_ganador_contra_diagonal == 5){
-			this.contador_ganador_Diagonal = 0;
-			this.contra_diagonal = 7;
-			return this.valor;
-		}else{
-			this.contador_ganador = 0;
-			this.contra_diagonal = 7;
-			this.valor = -1;
-			this.index = 0;
-			return this.valor;
-		}
-	}
-	
-	public int ganadorPosiciones(){
-		for(int i=0; i <= 7; i++){
-			int columna = i+1;
-			for(int j=columna; j < 7; j++){
-				if(tablero[i][i] != -1 && tablero[j][j] != -1 && tablero[i][i] == tablero[j][j]){
-					this.contador_ganador++;
-					this.valor = tablero[i][i];
+			//DIAGONAL
+			for(int i=0; i < 7; i++){
+				if(this.tablero[i][i] != -1 && this.tablero[cont][cont] != -1 
+						&& this.tablero[i][i] == this.tablero[cont][cont]){
+					this.ganador = this.tablero[i][i];
+					coincidenciasDiagonal++;
 				}
-				if(tablero[i][i] != -1 && tablero[j][j] != -1 && tablero[i][i] == tablero[j][j]){
-					this.contador_ganador++;
-					this.valor = tablero[i][i];
-				}else{
+				cont++;
+				if(cont == 7){
 					break;
 				}
 			}
+			
+			//CONTRA-DIAGONAL
+			for(int j=7; j > 0; j--){
+				int contAux1 = contAux + 1;
+				int jaux = j - 1;
+				if(jaux != -1){
+					if(this.tablero[contAux][j] != -1 && this.tablero[contAux1][jaux] != -1 
+							&& this.tablero[contAux][j] == this.tablero[contAux1][jaux]){
+						this.ganador = this.tablero[contAux][j];
+						coincidenciasContraDiagonal++;
+					}
+					contAux++;
+					if(contAux == 7){
+						break;
+					}
+				}
+			}
+			
+			//EVALUO SI HAY 6 COINCIDENCIAS Y SI LAS HAY DEVUELVO AL GANADOR DE LA PARTIDA
+			if(coincidenciasDiagonal == 6 || coincidenciasContraDiagonal == 6){
+				this.valor = this.ganador;
+				return this.ganador;
+			}else{
+				return -1;
+			}
+		}catch(Exception ex){
+			return -1;
 		}
-		
-		if(this.contador_ganador == 5)
-		{
-			this.contador_ganador = 0;
+	}
+	
+	
+	
+	/**
+	 * VERIFICO SI HAY GANADORES EN HORIZONTAL Y VERTICAL 
+	 * @return
+	 */
+	public int ganadorVertical_Horizontal(){
+		try{
+			int coincidenciasHorizontal = 1;
+			int coincidenciasVertical = 1;
+			
+			//HORIZONTAL
+			for(int i=0; i < 7; i++){
+				int cont = 1;
+				for(int j=i; j < 7; j++){
+					if(this.tablero[i][j] != -1 && this.tablero[i][cont] != -1 
+							&& this.tablero[i][j] == this.tablero[i][cont]){
+						this.ganador = this.tablero[i][j];
+						coincidenciasHorizontal++;
+					}
+					if(cont == 7){
+						break;
+					}
+					cont++;
+				}
+			}
+			
+			//VERTICAL
+			for(int j=0; j < 7; j++){
+				int cont = 1;
+				for(int i=j; i < 7; i++){
+					if(this.tablero[i][j] != -1 && this.tablero[cont][j] != -1 
+							&& this.tablero[i][j] == this.tablero[cont][j]){
+						this.ganador = this.tablero[i][j];
+						coincidenciasHorizontal++;
+					}
+					if(cont == 7){
+						break;
+					}
+					cont++;
+				}
+			}
+			
+			if(coincidenciasHorizontal == 6 ||coincidenciasVertical == 6){
+				this.valor = this.ganador;
+				return this.ganador;
+			}else{
+				return -1;
+			}
+		}catch(Exception ex){
+			return -1;
 		}
-		return this.valor;
 	}
 	
 }

@@ -116,6 +116,14 @@ h1 {
 
 /*===================== ESTILOS DE LA VENTANA PRINCIPAL ====================================*/
 
+/*Aqui seteo el tipo de Tipografia */
+@font-face {
+    font-family: myFirstFont;
+    src: url(../font/ComicRelief.ttf);
+}
+
+
+
 /*estilo para el banner de la pantalla principal*/
 section[ id="container"] > header > div[id="banner"]{
     background: url(../img/banner1.png) repeat scroll 0% 0% transparent;
@@ -147,7 +155,7 @@ section[id="container"]  > div > div[id="content"]{
 
 /*estilos de los botones de seleccion*/
 div [id = "content"] > button{
-    font-family: Comic Sans MS;
+    font-family: myFirstFont;
     font-size: 200%;
     width: 230px;
     margin-top: 20px;
