@@ -1,43 +1,47 @@
 package modelo;
 
+/**
+ * 
+ * @author pablo
+ *
+ */
 public class Modelo_bluetooth {
 	
 	private static int DIMENCION = 8;
 	private int tablero[][] = new int[DIMENCION][DIMENCION];
 	private int ganadores = -1;
-	private int indexTablero = 0;
-	private int contador_ganador = 0;
-	private int contra_diagonal = 7;
 	private int valor = -1;
-	private int contador_ganador_contra_diagonal = 1;
-	private int contador_ganador_Diagonal = 1;
-	private int aux_index = 0;
-	private int aux_index_contra = 7;
-	private int aux = 0;
-	private int index = 0;
-	private int anterior = 0;
-	private int ganadorDiagonal = 0;
-	private int coincidencias = 0;
-	private int coincidenciasV = 0;
 	private int ganador = 0;
-	private int evaluar = 0;
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public int get_valor(){
 		return this.valor;
 	}
 	
+	/**
+	 * 
+	 */
 	public Modelo_bluetooth(){
 		empezarPartida();
 	}
 	
-	
+	/**
+	 * 
+	 */
 	public void empezarPartida(){
 		for(int fila = 0; fila < DIMENCION; fila++)
 			for(int columna = 0; columna < DIMENCION; columna++)
 				tablero[fila][columna] = -1;
 	}
 	
-	
+	/**
+	 * 
+	 * @param valor
+	 * @return
+	 */
 	public boolean colocarFicha(String valor){
 		String valores[] = valor.split(",");
 		int fila = Integer.parseInt(valores[0]);
@@ -46,10 +50,6 @@ public class Modelo_bluetooth {
         if (tablero[fila][columna]==-1){
             if (this.ganadores == -1){
                 tablero[fila][columna]=1;
-                if(this.evaluar == 6){
-                  int valor1 = ganadorPartida_Diagonal_contraDiagonal();
-                }
-                this.evaluar++;
             }
             return true;
         }else{
@@ -57,6 +57,10 @@ public class Modelo_bluetooth {
         }
 	}
 	
+	/**
+	 * 
+	 * @param valor
+	 */
 	public void colocar_ficha(String valor){
 		String valores[] = valor.split(",");
 		int fila = Integer.parseInt(valores[0]);
@@ -136,9 +140,9 @@ public class Modelo_bluetooth {
 			int coincidenciasVertical = 1;
 			
 			//HORIZONTAL
-			for(int i=0; i < 7; i++){
+			for(int i=0; i < 8; i++){
 				int cont = 1;
-				for(int j=i; j < 7; j++){
+				for(int j=0; j < 8; j++){
 					if(this.tablero[i][j] != -1 && this.tablero[i][cont] != -1 
 							&& this.tablero[i][j] == this.tablero[i][cont]){
 						this.ganador = this.tablero[i][j];
@@ -152,9 +156,9 @@ public class Modelo_bluetooth {
 			}
 			
 			//VERTICAL
-			for(int j=0; j < 7; j++){
+			for(int j=0; j < 8; j++){
 				int cont = 1;
-				for(int i=j; i < 7; i++){
+				for(int i=0; i < 8; i++){
 					if(this.tablero[i][j] != -1 && this.tablero[cont][j] != -1 
 							&& this.tablero[i][j] == this.tablero[cont][j]){
 						this.ganador = this.tablero[i][j];

@@ -30,8 +30,6 @@ public class Seleccion_oponenteActivity extends Activity {
 	private ListView listado = null;
 	private Seleccion_oponenteController controller = null;
 	private ArrayList<Oponente> listOponentes = null;
-	/*private BluetoothServices_MultiJugador bsMultiJugador = null;
-	private Manejador_de_mensajes menHandler = null;*/
 	
 	
 	/**

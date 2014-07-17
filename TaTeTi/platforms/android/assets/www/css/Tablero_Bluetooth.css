@@ -10,38 +10,43 @@
 }
 
 
+header > div{
+    height: 155px;
+    margin: 0px auto;
+    width: 460px;
+}
+
 
 /*estilo para el display del jugador*/
 .jugador{
-    position: absolute;
     width: 61px;
     height: 68px;
-    top: 25px;
-    left: 50px;
+    float: left;
+    margin-left: 61px;
 }
 
 /*estilo para el display de la maquina*/
 .oponente{
-    position: absolute;
     width: 61px;
     height: 68px;
-    top: 25px;
-    left: 378px;
+    float: left;
+    margin-left: 228px;
 }
 
 /*estilo para el display del turno*/
 .turno{
-    position: absolute;
     width: 115px;
     height: 20px;
-    left: 188px;
-    top: 115px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 202px;
 }
 
 /*estilo para el tablero del juego*/
 table
 {
     border-collapse:collapse;
+    margin: 0px auto;
     margin-top: 10px;
 }
 
@@ -58,8 +63,8 @@ table, td, th
 
 /*estilo para el tablero en donde se configura el margen top*/
 body > section {
-    position: absolute;
-    top: 160px;
+    /*position: absolute;
+    top: 160px;*/
 }
 
 
@@ -70,7 +75,7 @@ td:hover{
 
 
 td > input{
-	padding: 2px;
+	padding: 1px;
 }
 
 
@@ -94,9 +99,9 @@ div[class="turno"] > div{
 
 /*estilo para ficha de retroceso*/
 .flecha{
-    position: absolute;
-    top: 740px;
-    left: 165px;
+    margin: 0px auto;
+    width: 141px;
+    margin-top: 40px;
 }
 
 /*estilo para la ficha de retroceso aqui se coloca la imagen*/

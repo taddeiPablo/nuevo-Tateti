@@ -11,29 +11,37 @@
 
 /*estilo para el display del jugador*/
 .jugador{
-    position: absolute;
+    /*position: absolute;*/
+    float:left;
     width: 61px;
     height: 68px;
-    top: 25px;
-    left: 50px;
+    padding: 20px;
+    margin-left: 55px;
+    /*top: 25px;
+    left: 50px;*/
 }
 
 /*estilo para el display de la maquina*/
 .oponente{
-    position: absolute;
+    /*position: absolute;*/
+    float: left;
     width: 61px;
     height: 68px;
-    top: 25px;
-    left: 378px;
+    padding: 20px;
+    margin-left: 150px;
+    /*top: 25px;
+    left: 378px;*/
 }
 
 /*estilo para el display del turno*/
 .turno{
-    position: absolute;
+   /* position: absolute;*/
     width: 115px;
     height: 20px;
-    left: 188px;
-    top: 115px;
+    margin-top: 120px;
+    margin-left: 175px;
+    /*left: 188px;
+    top: 115px;*/
 }
 
 /*estilo para el tablero del juego*/
@@ -54,10 +62,10 @@ table, td, th
     padding: 50px;
 }
 
-/*estilo para el tablero en donde se configura el margen top*/
-body > section[id="tablero"] {
-    position: absolute;
-    top: 160px;
+
+/*Aqui determino el estilo para la table para que se adapte a distintas resoluciones de pantalla*/
+section[id="tablero"] > table[id="juego"]{
+    margin: 0px auto;
 }
 
 /*estilo hover para el td*/
@@ -85,9 +93,9 @@ div[class="turno"] > div{
 
 /*estilo para ficha de retroceso*/
 .flecha{
-    position: absolute;
-    top: 740px;
-    left: 165px;
+    margin: 0px auto;
+    width: 140px;
+    margin-top: 70px;
 }
 
 /*estilo para la ficha de retroceso aqui se coloca la imagen*/
@@ -102,4 +110,13 @@ div[class="turno"] > div{
 /*estilo para cambiar la imagen de retroceso cada vez que se selecciona*/
 .flecha_selec:hover{
     background-image:url('../img/atras_naranja.png');
+}
+
+
+/*Aqui acomodo el panel superior para que se adapte a distintas resoluciones de pantalla*/
+header > div[id="content_header"]{
+    border: 1px solid #FFF;
+    width: 464px;
+    height: 149px;
+    margin: 0px auto;
 }

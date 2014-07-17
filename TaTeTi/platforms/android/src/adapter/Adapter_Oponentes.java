@@ -2,10 +2,12 @@ package adapter;
 
 import java.util.List;
 
-import com.app.TaTeTi.Seleccion_oponenteActivity;
 import entidades.Oponente;
 import entidades.Wrapper_template;
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,16 +19,18 @@ import android.widget.TextView;
  * @author pablo
  *
  */
+@SuppressLint("InflateParams")
 public class Adapter_Oponentes extends ArrayAdapter<Oponente>{
 	
 	private LayoutInflater inflater = null;
 	private View vista = null;
 	private Wrapper_template template = null;
 	private Oponente oponentes = null;
+	private Activity act = null;
 	
 	//TODO:
-	public void setActivity(Seleccion_oponenteActivity contex){
-		
+	public void setActivity(Activity activity){
+		this.act = activity;
 	}
 	
 	//TODO:
@@ -51,9 +55,14 @@ public class Adapter_Oponentes extends ArrayAdapter<Oponente>{
 			this.template = (Wrapper_template)this.vista.getTag();
 		}
 		this.oponentes = getItem(position);
+		this.template.getTxtNombre_Oponente().setTypeface(getFont());
 		this.template.getTxtNombre_Oponente().setText(this.oponentes.getNombre_Oponente());
 		
 		return this.vista;
 	}
 	
+	public Typeface getFont(){
+		Typeface fuente = Typeface.createFromAsset(this.act.getAssets(), "www/font/ComicRelief.ttf");
+		return fuente;
+	}
 }

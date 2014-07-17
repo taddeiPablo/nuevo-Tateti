@@ -7,7 +7,10 @@ import com.app.TaTeTi.Tablero_bluetoothActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
+import android.view.Gravity;
 import android.webkit.JavascriptInterface;
+import android.widget.TextView;
 
 /**
  * DEFINICION DEL CONTROLADOR PARA LA VENTANA INICIAL DE LA APP.
@@ -56,9 +59,18 @@ public class TatetiController implements DialogInterface.OnClickListener{
 	@JavascriptInterface
 	public void cerrar_app(){
 		this.cierre = true;
+		TextView text = new TextView(this.act);
+		text.setTextSize(20);
+		text.setGravity(Gravity.CENTER_HORIZONTAL);
+		text.setGravity(Gravity.CENTER_VERTICAL);
+		text.setWidth(400);
+		text.setHeight(220);
+		Typeface face = Typeface.createFromAsset(this.act.getAssets(), "www/font/ComicRelief.ttf");
+		text.setTypeface(face);
 		AlertDialog.Builder mensaje = new AlertDialog.Builder(this.act);
+		text.setText("  ESTA SEGURO QUE DESEA \n\tCERRAR ESTA APLICACION  ");
+		mensaje.setView(text);
 		mensaje.setTitle("ATENCION");
-		mensaje.setMessage("ESTA SEGURO QUE DESEA CERRAR ESTA APLICACION");
 		mensaje.setCancelable(true);
 		mensaje.setPositiveButton("salir", this);
 		mensaje.setNegativeButton("Cancelar",this);

@@ -121,7 +121,8 @@ function desactivar_actualizacion_tablero(){
 	clearTimeout(tablero);
 }
 
-
+/**
+*/
 function turno_inicio(){
 	var bandera = window.Tablero_BluetoothController.get_bandera();
 	if(bandera == 1){
@@ -142,8 +143,6 @@ function ganadores(){
 		alert('usted gano');
 	}else if(evaluar == 2){
 		alert('a ganado el rival');
-	}else{
-
 	}
 }
 

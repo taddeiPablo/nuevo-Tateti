@@ -7,8 +7,14 @@
     src: url(../font/ComicRelief.ttf);
 }
 
+header > div[id="bannerseleccion"] > div{
+    margin: 0 auto 0 auto;
+    text-align:center;
+}
+
+
 /*estilo para el titulo de la ventana*/
-header > div[id="bannerseleccion"] > h1{
+header > div[id="bannerseleccion"] > div > h1{
 	font-family: myFirstFont;
     font-size: 250%;
     color: #0648C4;
@@ -20,14 +26,19 @@ header > div[id="bannerseleccion"]{
 }
 
 
+section[id="containerSeleccion"] > div{
+    margin: 0px auto;
+    text-align: center;
+    width: 230px;
+    height: 500px;
+}
+
+
+
 /*estilo para el contenedor que contiene las fichas del juego*/
 section[id="containerSeleccion"] > div > div[id="content_seleccion"]{
-    width: 300px;
+    width: 230px;
     height: 500px;
-    box-shadow: 10px 10px 10px 10px #888;
-    position: absolute;
-    left: 95px;
-    top: 150px;
 }
 
 
@@ -35,28 +46,25 @@ section[id="containerSeleccion"] > div > div[id="content_seleccion"]{
 .iconCruz{
     width: 140px;
     height: 140px;
-    position: absolute;
-    left: 80px;
-    top: 60px;
     border-radius: 3px;
+    margin: 0px auto;
+    padding-top: 80px;
 }
 
 /*estilo para la ficha circulo*/
 .iconCirculo{
     width: 140px;
     height: 140px;
-    position: absolute;
-    left: 80px;
-    top: 285px;
     border-radius: 3px;
+    margin: 0px auto;
+    padding-top: 80px;
 }
 
 
 /*estilo para la ficha de retroceso*/
 .flecha{
-    position: absolute;
-    top: 740px;
-    left: 174px;
+    margin: 0px auto;
+    padding-top: 90px;
 }
 
 
@@ -89,17 +97,39 @@ section[id="containerSeleccion"] > div > div[id="content_seleccion"]{
 }
 
 
-/*.cruz:hover{
-    background-image:url('../img/cruz_naranja.png');
+/************************************************************************
+***********************AQUI UTILIZANDO MEDIA-QUERY***********************
+*************************************************************************/
+/**/
+@media screen and (min-height: 1280px)  {
+
+
+    header > div[id="bannerseleccion"] > div > h1{
+        font-family: myFirstFont;
+        font-size: 250%;
+        color: #0648C4;
+        margin-top: 85px;
+    }
+
+    section[id="containerSeleccion"] > div{
+        margin: 0px auto;
+        text-align: center;
+        width: 230px;
+        height: 590px;
+        margin-top: 170px;
+    }
+
+
+    section[id="containerSeleccion"] > div > div[id="content_seleccion"]{
+        width: 230px;
+        height: 500px;
+    }
+
+    .flecha{
+        margin-top: 80px;
+        margin: 0px auto;
+        padding-top: 100px;
+    }
+
+
 }
-
-.circulo:hover{
-   background-image:url('../img/circulo_naranja.png');  
-}
-
-.flecha_selec:hover{
-    background-image:url('../img/atras_naranja.png');
-}*/
-
-
-

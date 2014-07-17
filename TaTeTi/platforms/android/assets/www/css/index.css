@@ -129,9 +129,8 @@ section[ id="container"] > header > div[id="banner"]{
     background: url(../img/banner1.png) repeat scroll 0% 0% transparent;
     width: 270px;
     height: 90px;
-    position: absolute;
-    left: 103px;
-    top: 50px;
+    margin: 0px auto;
+    margin-top: 35px;
 }
 
 /*estilo para la imagen del banner*/
@@ -139,18 +138,16 @@ section[ id="container"] > div > div[id="imagen"]{
     background: url(../img/tateti.gif) repeat scroll 0% 0% transparent;
     width: 152px;
     height: 150px;
-    position: absolute;
-    left: 164px;
-    top: 230px;
+    margin: 0px auto;
+    margin-top: 90px;
 }
 
 /*estilo para el content principal*/
 section[id="container"]  > div > div[id="content"]{
-    width: 152px;
-    height: 150px;
-    position: absolute;
-    left: 123px;
-    top: 480px;
+    width: 232px;
+    height: 258px;
+    margin: 0px auto;
+    margin-top: 100px;
 } 
 
 /*estilos de los botones de seleccion*/
@@ -171,3 +168,40 @@ div [id = "content"] > button:hover{
     color: #FF6701;
 }
 
+/***********************************************************************************************
+*****************MEDIA QUERY PARA LOS DISTINTOS TIPOS DE RESOLUCION DE PANTALLA*****************
+************************************************************************************************/
+
+
+
+/*Aqui adaptamos la interfaz para una tablet*/
+@media screen and (min-height: 1280px)  {
+
+
+    section[ id="container"] > header > div[id="banner"]{
+        background: url(../img/banner1.png) repeat scroll 0% 0% transparent;
+        width: 270px;
+        height: 90px;
+        margin: 0px auto;
+        margin-top: 85px;
+    }
+
+
+
+    section[ id="container"] > div > div[id="imagen"]{
+        background: url(../img/tateti.gif) repeat scroll 0% 0% transparent;
+        width: 152px;
+        height: 150px;
+        margin: 0px auto;
+        margin-top: 225px;
+    }
+
+    section[id="container"]  > div > div[id="content"]{
+        width: 232px;
+        height: 258px;
+        margin: 0px auto;
+        margin-top: 230px;
+    } 
+
+
+}
