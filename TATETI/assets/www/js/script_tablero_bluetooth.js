@@ -24,7 +24,7 @@ $(function(){
 		fichaSeleccionada = window.Tablero_BluetoothController.get_mi_ficha();
 		cargar_ficha_tablero(fichaSeleccionada,id);
 		window.Tablero_BluetoothController.mandar_mensaje(id);
-		//ganadores();
+		ganadores();
 	});
 	
 	$('#flecha_selec').click(function(){
@@ -124,10 +124,10 @@ function turno_inicio(){
 	var bandera = window.Tablero_BluetoothController.get_bandera();
 	if(bandera == 1){
 		$('#turno').text("tu turno");
-		ganadores();
+		//ganadores();
 	}else if(bandera == 2){
 		$('#turno').text("turno del oponente");
-		ganadores();
+		//ganadores();
 	}else if(bandera == 3){
 		$('#turno').text("tu turno");
 	}
@@ -140,10 +140,8 @@ function ganadores(){
 	var evaluar = window.Tablero_BluetoothController.get_ganador();
 	if(evaluar == 1){
 		window.Tablero_BluetoothController.mostrar_Ganador(evaluar);
-		desactivar_actualizacion_tablero();
 	}else if(evaluar == 2){
 		window.Tablero_BluetoothController.mostrar_Ganador(evaluar);
-		desactivar_actualizacion_tablero();
 	}
 }
 

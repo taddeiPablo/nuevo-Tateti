@@ -53,6 +53,14 @@ public class Manejador_de_mensajes extends Handler {
 			this.tablero_bluetooth_controller.set_movimientoOponente(mensaje);
 			this.tablero_bluetooth_controller.set_index_rival(mensaje);
 			this.tablero_bluetooth_controller.set_bandera(3);
+			int valor = this.tablero_bluetooth_controller.get_ganador();
+			if(valor == 1){
+				this.tablero_bluetooth_controller.mostrar_Ganador(valor);
+				break;
+			}else if(valor == 2){
+				this.tablero_bluetooth_controller.mostrar_Ganador(valor);
+				break;
+			}
 			break;
 		case MESSAGE_WRITE :
 			Log.e("aqui entro", "aca entro" + "MESSAGE_WRITE");
