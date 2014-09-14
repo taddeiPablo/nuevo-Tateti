@@ -2,6 +2,7 @@ package com.app.TaTeTi;
 
 import java.util.ArrayList;
 import java.util.Set;
+
 import controladores.Seleccion_oponenteController;
 import modelo.BroadCastBluetooth;
 import entidades.Oponente;
@@ -13,12 +14,15 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ListView;
 
 /**
- * 
+ * =====================================================
  * @author pablo
  *
+ *======================================================
  */
 public class Seleccion_oponenteActivity extends Activity {
 	
@@ -30,6 +34,8 @@ public class Seleccion_oponenteActivity extends Activity {
 	private ListView listado = null;
 	private Seleccion_oponenteController controller = null;
 	private ArrayList<Oponente> listOponentes = null;
+	private Button BtnActualizar = null;
+	private CheckBox checkInvitacion = null;
 	
 	
 	/**
@@ -43,12 +49,15 @@ public class Seleccion_oponenteActivity extends Activity {
 		
 		
 		this.listado = (ListView)findViewById(R.id.listOponentes);
-		
+		this.BtnActualizar = (Button)findViewById(R.id.btnconexion);
+		this.checkInvitacion = (CheckBox)findViewById(R.id.checkEsperar);
 		activar_bluetooth();
 		busqueda_oponentes();
 		
 		this.controller = new Seleccion_oponenteController(this,this.mBluetoothAdapter,this);
 		this.listado.setOnItemClickListener(controller);
+		this.BtnActualizar.setOnClickListener(controller);
+		this.checkInvitacion.setOnCheckedChangeListener(controller);
 	}
 	
 
@@ -110,6 +119,7 @@ public class Seleccion_oponenteActivity extends Activity {
 			
 			if(pairedDevices.size() > 0){
 				for(BluetoothDevice opo_disp : pairedDevices){
+					listado_oponente.clear();
 					this.oponente = new Oponente(opo_disp.getName(),opo_disp.getAddress());
 					listado_oponente.add(oponente);
 				}

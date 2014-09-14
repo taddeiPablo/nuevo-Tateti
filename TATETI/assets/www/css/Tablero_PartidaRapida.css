@@ -11,14 +11,11 @@
 
 /*estilo para el display del jugador*/
 .jugador{
-    /*position: absolute;*/
     float:left;
     width: 61px;
     height: 68px;
     padding: 20px;
-    margin-left: 55px;
-    /*top: 25px;
-    left: 50px;*/
+    margin-left: 30px;
 }
 
 /*estilo para el display de la maquina*/
@@ -28,9 +25,7 @@
     width: 61px;
     height: 68px;
     padding: 20px;
-    margin-left: 150px;
-    /*top: 25px;
-    left: 378px;*/
+    margin-left: 180px;
 }
 
 /*estilo para el display del turno*/
@@ -94,7 +89,7 @@ div[class="turno"] > div{
 /*estilo para ficha de retroceso*/
 .flecha{
     margin: 0px auto;
-    margin-left: 5em;
+    margin-left: 3em;
     float: left;
 }
 
@@ -111,7 +106,7 @@ div[class="turno"] > div{
 .recargarContent{
     width: 140px;
     float: left;
-    margin-left: 9em; 
+    margin-left: 12em; 
 }
 
 .recargar{

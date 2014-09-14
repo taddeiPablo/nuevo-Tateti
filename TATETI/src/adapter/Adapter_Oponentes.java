@@ -15,9 +15,11 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 /**
+ * =========================================================
  * 
  * @author pablo
  *
+ *==========================================================
  */
 @SuppressLint("InflateParams")
 public class Adapter_Oponentes extends ArrayAdapter<Oponente>{

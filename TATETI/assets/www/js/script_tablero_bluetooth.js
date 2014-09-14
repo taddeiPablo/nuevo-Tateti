@@ -124,12 +124,12 @@ function turno_inicio(){
 	var bandera = window.Tablero_BluetoothController.get_bandera();
 	if(bandera == 1){
 		$('#turno').text("tu turno");
-		//ganadores();
 	}else if(bandera == 2){
 		$('#turno').text("turno del oponente");
-		//ganadores();
+		$("input[type=image]").prop('disabled', true);
 	}else if(bandera == 3){
 		$('#turno').text("tu turno");
+		$("input[type=image]").prop('disabled', false);
 	}
 }
 
@@ -144,4 +144,3 @@ function ganadores(){
 		window.Tablero_BluetoothController.mostrar_Ganador(evaluar);
 	}
 }
-

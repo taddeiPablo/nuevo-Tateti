@@ -19,18 +19,18 @@ header > div{
 
 /*estilo para el display del jugador*/
 .jugador{
-    width: 61px;
+    width: 90px;
     height: 68px;
     float: left;
-    margin-left: 61px;
+    margin-left: 75px;
 }
 
 /*estilo para el display de la maquina*/
 .oponente{
-    width: 61px;
+    width: 120px;
     height: 68px;
     float: left;
-    margin-left: 228px;
+    margin-left: 170px;
 }
 
 /*estilo para el display del turno*/
@@ -38,8 +38,8 @@ header > div{
     width: 115px;
     height: 20px;
     float: left;
-    margin-top: 20px;
-    margin-left: 202px;
+    margin-top: 10px;
+    margin-left: 185px;
 }
 
 /*estilo para el tablero del juego*/
@@ -47,7 +47,7 @@ table
 {
     border-collapse:collapse;
     margin: 0px auto;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
 /*estilo para el tablero del juego*/
@@ -100,21 +100,21 @@ div[class="turno"] > div{
 /*estilo para ficha de retroceso*/
 .flecha{
     margin: 0px auto;
-    width: 141px;
-    margin-top: 40px;
+    width: 91px;
+    margin-top: 30px;
 }
 
 /*estilo para la ficha de retroceso aqui se coloca la imagen*/
 .flecha_selec{
-    background-image:url('../img/atras.png');
+    background-image:url('../img/icono1.png');
     background-repeat:no-repeat;
     border-radius: 10px;
-    width: 141px;
-    height: 62px;
+    width: 83px;
+    height: 76px;
 }
 
 /*estilo para cambiar la imagen de retroceso cada vez que se selecciona*/
-.flecha_selec:hover{
+/*.flecha_selec:hover{
     background-image:url('../img/atras_naranja.png');
-}
+}*/
 

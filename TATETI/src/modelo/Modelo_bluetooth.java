@@ -1,9 +1,11 @@
 package modelo;
 
 /**
+ * ==========================================================
  * 
  * @author pablo
  *
+ *===========================================================
  */
 public class Modelo_bluetooth {
 	
@@ -68,8 +70,7 @@ public class Modelo_bluetooth {
 		
         if (tablero[fila][columna]==-1){
             if (this.ganadores == -1){
-                tablero[fila][columna]=2;
-                
+                tablero[fila][columna]=2; 
             }
         }
 	}
@@ -87,15 +88,21 @@ public class Modelo_bluetooth {
 			int coincidenciasContraDiagonal = 1;
 			
 			//DIAGONAL
-			for(int i=0; i < 7; i++){
+			for(int i=0; i < 7; i++){ 
 				if(this.tablero[i][i] != -1 && this.tablero[cont][cont] != -1 
 						&& this.tablero[i][i] == this.tablero[cont][cont]){
-					this.ganador = this.tablero[i][i];
 					coincidenciasDiagonal++;
+					if(coincidenciasDiagonal == 5){
+						this.ganador = this.tablero[i][i];
+					}
+				}else{
+					if(coincidenciasDiagonal < 5){
+						coincidenciasDiagonal = 1;
+					}
 				}
-				cont++;
-				if(cont == 7){
-					break;
+				
+				if(i <= 5){
+					cont++;
 				}
 			}
 			
@@ -106,8 +113,14 @@ public class Modelo_bluetooth {
 				if(jaux != -1){
 					if(this.tablero[contAux][j] != -1 && this.tablero[contAux1][jaux] != -1 
 							&& this.tablero[contAux][j] == this.tablero[contAux1][jaux]){
-						this.ganador = this.tablero[contAux][j];
 						coincidenciasContraDiagonal++;
+						if(coincidenciasContraDiagonal == 5){
+							this.ganador = this.tablero[contAux][j];
+						}
+					}else{
+						if(coincidenciasContraDiagonal < 5){
+							coincidenciasContraDiagonal = 1;
+						}
 					}
 					contAux++;
 					if(contAux == 7){
@@ -117,7 +130,7 @@ public class Modelo_bluetooth {
 			}
 			
 			//EVALUO SI HAY 6 COINCIDENCIAS Y SI LAS HAY DEVUELVO AL GANADOR DE LA PARTIDA
-			if(coincidenciasDiagonal == 6 || coincidenciasContraDiagonal == 6){
+			if(coincidenciasDiagonal == 5 || coincidenciasContraDiagonal == 5){
 				this.valor = this.ganador;
 				return this.ganador;
 			}else{
@@ -145,8 +158,14 @@ public class Modelo_bluetooth {
 				for(int j=0; j < 8; j++){
 					if(this.tablero[i][j] != -1 && this.tablero[i][cont] != -1 
 							&& this.tablero[i][j] == this.tablero[i][cont]){
-						this.ganador = this.tablero[i][j];
 						coincidenciasHorizontal++;
+						if(coincidenciasHorizontal == 5){
+							this.ganador = this.tablero[i][j];
+						}
+					}else{
+						if(coincidenciasHorizontal < 5 && coincidenciasHorizontal == 1 ){
+							coincidenciasHorizontal = 1;
+						}
 					}
 					if(cont == 7){
 						break;
@@ -161,8 +180,14 @@ public class Modelo_bluetooth {
 				for(int i=0; i < 8; i++){
 					if(this.tablero[i][j] != -1 && this.tablero[cont][j] != -1 
 							&& this.tablero[i][j] == this.tablero[cont][j]){
-						this.ganador = this.tablero[i][j];
-						coincidenciasHorizontal++;
+						coincidenciasVertical++;
+						if(coincidenciasVertical == 5){
+							this.ganador = this.tablero[i][j];
+						}
+					}else{
+						if(coincidenciasVertical < 5){
+							coincidenciasVertical = 1;
+						}
 					}
 					if(cont == 7){
 						break;
@@ -171,7 +196,7 @@ public class Modelo_bluetooth {
 				}
 			}
 			
-			if(coincidenciasHorizontal == 6 ||coincidenciasVertical == 6){
+			if(coincidenciasHorizontal == 5 ||coincidenciasVertical == 5){
 				this.valor = this.ganador;
 				return this.ganador;
 			}else{
@@ -181,5 +206,4 @@ public class Modelo_bluetooth {
 			return -1;
 		}
 	}
-	
 }
