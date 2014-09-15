@@ -59,7 +59,7 @@ public class Seleccion_oponenteController implements OnItemClickListener,OnClick
 			this.act.setResult(Activity.RESULT_OK, enviar);
 			this.act.finish();
 		}catch(Exception ex){
-			
+			ex.printStackTrace();
 		}
 	}
 

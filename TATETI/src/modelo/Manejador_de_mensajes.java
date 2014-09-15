@@ -10,9 +10,9 @@ import android.os.Message;
 import android.util.Log;
 
 /**
- * 
+ *===============================================
  * @author Pablo
- *
+ *================================================
  */
 public class Manejador_de_mensajes extends Handler {
 

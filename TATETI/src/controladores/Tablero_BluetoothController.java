@@ -8,7 +8,6 @@ import android.bluetooth.BluetoothDevice;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.util.Log;
 import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.widget.ImageView;
@@ -140,7 +139,7 @@ public class Tablero_BluetoothController  implements DialogInterface.OnClickList
 			this.Listado_POpup = new Intent(this.act,Seleccion_oponenteActivity.class);
 			this.act.startActivityForResult(Listado_POpup, 1);
 		}catch(Exception ex){
-			
+			ex.printStackTrace();
 		}
 	}
 	
@@ -153,7 +152,7 @@ public class Tablero_BluetoothController  implements DialogInterface.OnClickList
 			this.bsMultiJugador = new BluetoothServices_MultiJugador(this.act,this.menHandler);
 			this.bsMultiJugador.start();
 		}catch(Exception ex){
-			Log.e("Error", "Clase (Seleccion_oponenteActivity)Funcion iniciar_vinculacion" + ex.getMessage());
+			ex.printStackTrace();
 		}
 	}
 	
@@ -166,7 +165,7 @@ public class Tablero_BluetoothController  implements DialogInterface.OnClickList
 				iniciar_vinculacion();
 			}
 		}catch(Exception ex){
-			
+			ex.printStackTrace();
 		}
 	}
 	
@@ -177,7 +176,7 @@ public class Tablero_BluetoothController  implements DialogInterface.OnClickList
 		try{
 			this.bsMultiJugador.stop();
 		}catch(Exception ex){
-			
+			ex.printStackTrace();
 		}
 	}
 	
@@ -211,7 +210,7 @@ public class Tablero_BluetoothController  implements DialogInterface.OnClickList
 			byte[] mensajeArray = indexStr.getBytes();
 			this.bsMultiJugador.write(mensajeArray);
 		}catch(Exception ex){
-			
+			ex.printStackTrace();
 		}
 	}
 

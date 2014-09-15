@@ -145,7 +145,7 @@ public class Modelo_bluetooth {
 				  this.set_valor(Ganador);
 			}
 		}catch(Exception ex){
-			
+			ex.printStackTrace();
 		}
 		return Ganador;
 	}
@@ -212,7 +212,7 @@ public class Modelo_bluetooth {
 				this.set_valor(Ganador);
 			}
 		}catch(Exception ex){
-			
+			ex.printStackTrace();
 		}
 		return Ganador;
 	}
