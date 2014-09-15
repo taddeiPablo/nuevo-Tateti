@@ -15,11 +15,14 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
-/*******************************************
- * 
+/**
+ *==========================================
+ *CLASE POR LA CUAL SE MANEJA, LAS CONEXIONES BLUETOOTH
+ *ENTRE DISPOSITIVOS.
+ *ESTA CLASE MANEJA LA CONEXION, Y EL ENVIO DE MENSAJES POR BLUETOOTH.
  * @author pablo
- *
- *******************************************/
+ *==========================================
+ */
 public class BluetoothServices_MultiJugador {
 	
 	private static final String TAG = "BluetoothServicesChat";
@@ -44,9 +47,10 @@ public class BluetoothServices_MultiJugador {
 	public static final int STATE_CONNECTED = 3;
 	
 	/**
-	 * 
-	 * @param context
-	 * @param manejador
+	 * constructor de la clase, resive el activity, y un manejador
+	 * de mensajes(handler)
+	 * @param context (activity)
+	 * @param manejador (desde aqui se manejan los mensajes resividos)
 	 */
 	public BluetoothServices_MultiJugador(Context context, Handler manejador){
 		this.btAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -68,7 +72,7 @@ public class BluetoothServices_MultiJugador {
 	
 
 	/**
-	 * 
+	 * METODO QUE RECIBE EL ETADO DE LA CONEXION
 	 * @param state
 	 */
 	private synchronized void setState(int state){
@@ -85,7 +89,8 @@ public class BluetoothServices_MultiJugador {
 	}
 	
 	/**
-	 * 
+	 * METODO POR EL CUAL SE ESTABLECE EL CANAL
+	 * DE COMUNICACION ENTRE DISPOSITIVOS
 	 */
 	public synchronized void start(){
 		if(this.mConnectThread != null){
@@ -215,9 +220,9 @@ public class BluetoothServices_MultiJugador {
 	 *********************************************************/
 	 
 	/**
-	 * 
+	 * ================================================
 	 * @author pablo
-	 *
+	 *=================================================
 	 */
 	private class AcceptThread extends Thread {
     	BluetoothServerSocket serverSocket = null;
@@ -259,9 +264,9 @@ public class BluetoothServices_MultiJugador {
 	
 	
 	/**
-	 * 
+	 * ============================================
 	 * @author pablo
-	 *
+	 *=============================================
 	 */
 	private class ConnectThread extends Thread {
         private final BluetoothSocket mmSocket;
@@ -330,9 +335,9 @@ public class BluetoothServices_MultiJugador {
 	 
 	
 	/**
-	 * 
+	 *==================================================
 	 * @author pablo
-	 *
+	 *==================================================
 	 */
 	private class ConnectedThread extends Thread {
         private final BluetoothSocket mmSocket;

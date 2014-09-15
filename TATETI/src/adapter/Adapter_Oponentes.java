@@ -16,9 +16,8 @@ import android.widget.TextView;
 
 /**
  * =========================================================
- * 
- * @author pablo
- *
+ * ADAPTADOR PARA EL LISTADO DE OPONENTES
+ * @author Pablo Taddei
  *==========================================================
  */
 @SuppressLint("InflateParams")
@@ -30,19 +29,31 @@ public class Adapter_Oponentes extends ArrayAdapter<Oponente>{
 	private Oponente oponentes = null;
 	private Activity act = null;
 	
-	//TODO:
+	/**
+	 * METODO QUE RECIBE UN TIPO ACTIVITY
+	 * @param activity
+	 */
 	public void setActivity(Activity activity){
 		this.act = activity;
 	}
 	
-	//TODO:
+	/**
+	 * CONSTRUCTOR DE LA CLASE QUE RECIBE VARIOS PARAMETROS
+	 * @param context (o activity)
+	 * @param resource (aqui le pasamos la lista xml)
+	 * @param objects (una coleccion que sera mostrada en la lista)
+	 */
 	public Adapter_Oponentes(Context context, int resource, List<Oponente> objects) {
 		super(context, resource, objects);
 		this.inflater = LayoutInflater.from(context);
 	}
 	
 
-	//TODO:
+	/**
+	 * METODO POR EL CUAL INFLAMOS NUESTRO LAYOUT
+	 * CUSTOM, LUEGO LE CARGAMOS LOS DATOS DE LA COLECCION
+	 * Y SE DEVUELVE LA VIEW COMPLETA
+	 */
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
@@ -63,6 +74,11 @@ public class Adapter_Oponentes extends ArrayAdapter<Oponente>{
 		return this.vista;
 	}
 	
+	/**
+	 * METODO DESDE EL CUAL MODIFICAMOS EL TIPO DE LETRA 
+	 * EN LOS ITEMS DE LA LISTA
+	 * @return
+	 */
 	public Typeface getFont(){
 		Typeface fuente = Typeface.createFromAsset(this.act.getAssets(), "www/font/ComicRelief.ttf");
 		return fuente;
